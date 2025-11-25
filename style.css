@@ -1,4 +1,3 @@
-
 :root {
     --bg: #fdfaf6;      
     --card: #ffffff;      
@@ -104,6 +103,7 @@ nav a:hover {
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    transition: 0.2s;
 }
 
 .btn-primary {
@@ -152,6 +152,8 @@ nav a:hover {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden; 
+    display: flex;
+    flex-direction: column;
 }
 
 .card .imgwrap {
@@ -163,10 +165,28 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover; 
+    transition: transform 0.3s;
 }
 
-.card .content {
+.card:hover .imgwrap img {
+    transform: scale(1.05);
+}
+
+.content {
     padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .actions {
+    margin-top: auto;
+}
+
+.card .title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .card .author {
@@ -194,3 +214,119 @@ footer {
     margin-top: 40px;
     text-align: center;
 }
+
+/* Trang chi tiết */
+
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    padding: 20px 0;
+    margin: 0;
+    list-style: none;
+    font-size: 14px;
+    color: var(--muted);
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: var(--muted);
+}
+.breadcrumb a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.book-detail-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid #e0d9d3;
+}
+
+.book-cover-large img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.book-title-main {
+    margin-top: 0;
+    font-size: 32px;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.book-meta p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+.text-primary {
+    color: var(--primary);
+    font-weight: bold;
+}
+.status-available {
+    color: #2e7d32;
+    font-weight: bold;
+    background: #e8f5e9;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.book-rating {
+    margin: 15px 0;
+    color: #f1c40f; 
+}
+.book-rating span {
+    color: var(--muted);
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.book-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; 
+}
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 22px;
+}
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- Nút Shopee --- */
+.btn-shopee {
+    background-color: #ee4d2d;
+    color: white;
+}
+.btn-shopee:hover {
+    background-color: #d73211;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(238, 77, 45, 0.3);
+}
+
+.section-title {
+    font-size: 24px;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    color: var(--text);
+}
+
+.related-books {
+    margin-top: 50px;
+}
+
