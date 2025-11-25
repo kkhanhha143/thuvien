@@ -146,6 +146,12 @@ nav a:hover {
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
     background: var(--card);
     border: 1px solid #e0d9d3;
@@ -330,3 +336,16 @@ footer {
     margin-top: 50px;
 }
 
+@media (max-width: 768px) {
+    .book-detail-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .book-cover-large {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    .book-actions {
+        flex-direction: column;
+    }
+}
